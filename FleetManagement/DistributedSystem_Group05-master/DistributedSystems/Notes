@@ -1,0 +1,56 @@
+- Dynamic discovery of hosts
+
+Start up to three servers with ServerMain.
+1. Code looks for free ports {8001, 8002, 8003}
+2. Creates member and adds it to the cluster. If no cluster is created already, a cluster will be created too.
+	Port 8001 is in the initial start the leader. 
+3. Dynamic discovery by joinmessage
+	
+No failure handling yet. Only heartbeats, to see if a server is still up. 
+
+Next: What to do when leader fails? -> Check if leader is up (maybe heartbeats) if leader is not available
+election. done
+
+Voting
+After fault tolerance. Voting will be initiated after leader crash. done
+
+Fault tolerance
+Next steps: 
+	Leader crash, Replica crash, Replica server gets replicas of leader done
+	
+
+Ordered reliable multicast
+reliable multicast done.
+ordered coming soon
+	-> with holdbackqueue. LinkedList, ArrayBlockingQueue and PriorityQueue. Java Queues follows FIFO ordering
+Holdbackqueue implemented with priorityqueue. only from client to server, which is unicast, because only the leaderserver receives the messages
+next: multicast from server to client, holdbackqueue done
+client multicast done
+server multicast done
+
+
+Architecture model
+Done
+
+
+Next step: 
+Send state to replica done
+detected replica crash done
+detected leader crash and start election done
+
+
+
+Restart server -> get replica!!!!
+
+change leader server port 
+
+
+
+
+Application level:
+create car done
+rent car done
+already rented cars can not be rented done
+list of cars will be shown in initial start done
+Assigned to name done
+unrent cars by actual user done
