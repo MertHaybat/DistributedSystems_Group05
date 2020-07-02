@@ -192,8 +192,8 @@ public class TCPServer implements Runnable{
 					while (replicaMessage != null) {
 						if (replicaMessage.getMappedCarlist().entrySet().size() == 0) {
 						} else {
-							for (Map.Entry<Long, List<Car>> entry : replicaMessage.getMappedCarlist().entrySet()) {
-
+							for (Map.Entry<Long, List<Car>> entry : replicaMessage.getMappedCarlist().entrySet()) {								
+								mappedCarlist = replicaMessage.getMappedCarlist();
 								carList = entry.getValue();
 								System.out.println("Replica sequence: " + entry.getKey());
 								sequence.set(entry.getKey());
